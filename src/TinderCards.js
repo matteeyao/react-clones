@@ -4,18 +4,27 @@ import axios from "./axios";
 import "./TinderCards.css";
 
 function TinderCards() {
-  const [people, setPeople] = useState([]);
+  const [profiles, setProfiles] = useState([
+    {
+      name: "Steve Jobs",
+      imgUrl: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_250,q_auto:good,w_250/v1/gcs/platform-data-startupgrind/events/steve-jobs.jpg"
+    },
+    {
+      name: "Mark Zuckerberg",
+      imgUrl: "https://pbs.twimg.com/profile_images/2271292852/Markszuckerberg.jpg"
+    },    
+  ]);
 
   useEffect(() => {
     async function fetchData() {
       const req = await axios.get("/tinder/cards");
 
-      setPeople(req.data);
+      setProfiles(req.data);
     }
     fetchData();
   }, []);
 
-  console.log(people);
+  console.log(profiles);
 
   const swiped = (direction, nameToDelete) => {
     console.log("removing: " + nameToDelete);
@@ -28,19 +37,18 @@ function TinderCards() {
   return (
     <div className="tinderCards">
       <div className="tinderCards__cardContainer">
-        {people.map((person) => (
+        {profiles.map((profile) => (
           <TinderCard
             className="swipe"
-            key={person.name}
+            key={profile.name}
             preventSwipe={["up", "down"]}
-            onSwipe={(dir) => swiped(dir, person.name)}
-            onCardLeftScreen={() => outOfFrame(person.name)}
+            onSwipe={(dir) => swiped(dir, profile.name)}
+            onCardLeftScreen={() => outOfFrame(profile.name)}
           >
             <div
-              style={{ backgroundImage: `url(${person.imgUrl})` }}
-              className="card"
-            >
-              <h3>{person.name}</h3>
+              style={{ backgroundImage: `url(${profile.imgUrl})` }}
+              className="card">
+              <h3>{profile.name}</h3>
             </div>
           </TinderCard>
         ))}

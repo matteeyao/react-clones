@@ -1,6 +1,175 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```zsh
+npx create-react-app tinder-clone
+```
+
+<br/>
+
+## Add Firebase to your web app
+
+<br/>
+
+### Register App
+
+<br/>
+
+### Add Firebase SDK
+
+Copy and paste these scripts into the bottom of your <body> tag, but before you use any Firebase services:
+
+```js
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyA_E7FKoIxQ6MzInIbGp_hS8IT9vMIUoBE",
+  authDomain: "tinder-clone-448cd.firebaseapp.com",
+  projectId: "tinder-clone-448cd",
+  storageBucket: "tinder-clone-448cd.appspot.com",
+  messagingSenderId: "945003098978",
+  appId: "1:945003098978:web:0dcc601dffe654dc9ff23b",
+  measurementId: "G-DGKM2QE83S"
+};
+```
+
+<br/>
+
+### Deploy to Firebase Hosting
+
+You can deploy now or later. To deploy now, open a terminal window, then navigate to or create a root directory for your web app.
+
+**Sign in to Google**
+
+```zsh
+$ firebase login
+```
+
+**Initiate your project**
+
+Run this command in your app's root directory
+
+```zsh
+$ firebase init
+```
+
+**When you're ready, deploy your web app**
+
+Put your static files (e.g. HTML, CSS, JS) in your app's deploy directory (the default is "public"). Then, run this command from your app's root directory.
+
+```zsh
+$ firebase deploy
+```
+
+After deploying, view your app at https://tinder-clone-448cd.web.app/
+
+<br/>
+
+## React app setup
+
+<br/>
+
+```zsh
+npm start
+```
+
+Remove `App.test.js`, `logo.svg`, `setupTest.js`
+
+```zsh
+$ npm install @material-ui/core
+```
+
+```zsh
+$ npm install @material-ui/icons
+```
+
+```zsh
+$ npm install react-router-dom
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Available Scripts
 
