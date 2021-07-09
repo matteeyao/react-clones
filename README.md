@@ -101,88 +101,29 @@ r + a + f + c + e
 r + f + c + e
 ```
 
+## Deploy through Firebase
 
+```zsh
+$ firebase init
+```
 
+→ Hosting: Configure and deploy Firebase Hosting sites
 
+→ Use an existing project
 
+→ tinder-clone-448cd
 
+→ build
 
+→ Y
 
+```zsh
+$ npm run build
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```zsh
+$ firebase deploy
+```
 
 ## Available Scripts
 
