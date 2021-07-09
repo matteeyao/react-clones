@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from "react";
 import TinderCard from "react-tinder-card";
-import axios from "./axios";
+import database from './firebase';
 import "./TinderCards.css";
 
 function TinderCards() {
-  const [profiles, setProfiles] = useState([
-    {
-      name: "Steve Jobs",
-      imgUrl: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_250,q_auto:good,w_250/v1/gcs/platform-data-startupgrind/events/steve-jobs.jpg"
-    },
-    {
-      name: "Mark Zuckerberg",
-      imgUrl: "https://pbs.twimg.com/profile_images/2271292852/Markszuckerberg.jpg"
-    },    
-  ]);
+  const [profiles, setProfiles] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const req = await axios.get("/tinder/cards");
+      const unsubscribe = database.collection("profiles").onSnapshot(snapshot => (
+        setProfiles(snapshot.docs.map(doc => doc.data()))
+      ));
 
-      setProfiles(req.data);
+      return () => {
+        /* This is the cleanup, detaching the listener if the dependency [] 
+        was instead [profiles] */
+        unsubscribe();
+      }
+
+      // const req = await axios.get("/tinder/cards");
+      // setProfiles(req.data);
     }
     fetchData();
   }, []);

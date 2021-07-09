@@ -9,22 +9,30 @@ import {
 import Header from "./Header";
 import TinderCards from "./TinderCards";
 import SwipeButtons from "./SwipeButtons";
+import Chats from "./Chats";
 
 function App() {
   return (
     <div className="app">
-      <Header />
       <Router>
         <Switch>
-          <Route path="/chat">I am the chatpage :fire</Route>
+          <Route path="/chat/:profile">
+            <Header backButton="/chats" />
+            <Chats />
+          </Route>
+          <Route path="/chats">
+            <Header backButton="/" />
+            <Chats />
+          </Route>
           <Route path="/">
+            <Header />
             <TinderCards />
+            <SwipeButtons />
           </Route>
         </Switch>
       </Router>
 
 
-      {/* <SwipeButtons /> */}
       {/* Chats index */}
       {/* Individual chat screen */}
     </div>

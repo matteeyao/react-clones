@@ -85,8 +85,21 @@ $ npm install @material-ui/icons
 $ npm install react-router-dom
 ```
 
+```zsh
+$ npm install firebase
+```
 
+React functional component shortcut
 
+```
+r + a + f + c + e
+```
+
+... or ...
+
+```
+r + f + c + e
+```
 
 
 
